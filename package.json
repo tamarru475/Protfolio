@@ -1,0 +1,22 @@
+{
+  "name": "protfolio",
+  "version": "1.0.0",
+  "description": "Tamar Rubin protfolio",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass sass/main.scss style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamarru475/protfolio.git"
+  },
+  "author": "Tamar Rubin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tamarru475/protfolio/issues"
+  },
+  "homepage": "https://github.com/tamarru475/protfolio#readme",
+  "devDependencies": {
+    "sass": "^1.58.1"
+  }
+}
