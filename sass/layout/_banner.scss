@@ -7,13 +7,18 @@
     gap: 5rem;
   }
 
+  &__left {
+    padding-left: 7.9rem;
+  }
+
   &__heading {
     margin: 0;
-    padding-left: 7.9rem;
+    padding-bottom: 3rem;
     width: 66.8rem;
     font-weight: 600;
     font-size: 4.4rem;
     line-height: 5.5rem;
+    animation: moveInLeft 2s ease-in;
 
     &-span1 {
       font-size: 3.2rem;
@@ -51,5 +56,59 @@
     left: 0;
     max-width: 100vw;
     animation: moveInWaves 3s ease-in-out;
+  }
+
+  &__btn {
+    animation: moveInBtn 5s ease-in;
+    &,
+    &:link,
+    &:visited {
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 2rem;
+      border-radius: 10rem;
+      transition: all 0.2s linear;
+      font-size: $default-font-size;
+      background-color: $color-secondary;
+      color: $color-grey-dark;
+      // Changes for <button> element
+      border: none;
+      cursor: pointer;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 1rem rgba($color-black, 0.2);
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 0.5rem rgba($color-black, 0.2);
+    }
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &--anim {
+      animation: moveInBtn 0.5s ease-in 0.75s;
+      animation-fill-mode: backwards;
+    }
   }
 }

@@ -1,0 +1,237 @@
+.card {
+  //Functionality
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 30rem;
+
+  &__side {
+    height: 40rem;
+    transition: all 0.8s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-text;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, #ae82de, #7a4aae);
+      }
+      &-2 {
+        background-image: linear-gradient(to right bottom, #709562, #374c2d);
+      }
+      &-3 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #0fbf85);
+      }
+
+      &-4 {
+        background-image: linear-gradient(to right bottom, #6b8997, #37444c);
+      }
+
+      &-5 {
+        background-image: linear-gradient(to right bottom, #0071eb, #011945);
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  //Front side styling
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    &--1 {
+      background-image: url('../../img/limestone.png');
+    }
+    &--2 {
+      background-image: url('../../img/newsexplorer.png');
+    }
+    &--3 {
+      background-blend-mode: screen;
+      background-image: linear-gradient(to right bottom, #7ed56f, #0fbf85),
+        url('../../img/hero-small.jpg');
+    }
+
+    &--4 {
+      background-image: url('../../img/aroundus.png');
+    }
+
+    &--5 {
+      height: 25rem;
+      background-image: url('../../img/mathmate.png');
+      background-position: 50%;
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    padding: 3rem;
+    font-size: 3.60142rem;
+    line-height: 4.2rem;
+
+    &-1 {
+      font-family: 'Poiret One', sans-serif;
+      color: #7a4aae;
+    }
+
+    &-2 {
+      font-family: sans-serif;
+      color: #374c2d;
+    }
+
+    &-3 {
+      font-family: 'Courier New', Courier, monospace;
+      color: #0fbf85;
+    }
+
+    &-4 {
+      font-family: Arial, Helvetica, sans-serif;
+      color: $color-black;
+    }
+
+    &-5 {
+      font-family: Helvetica, sans-serif;
+      color: #f86cb8;
+    }
+  }
+
+  //Back side styling
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__details-box {
+    text-align: center;
+    color: $color-text;
+  }
+
+  &__text {
+    max-width: 80%;
+    margin: 0 auto;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  &__btn {
+    &,
+    &:link,
+    &:visited {
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 2rem;
+      border-radius: 10rem;
+      transition: all 0.2s linear;
+      font-size: $default-font-size;
+      background-color: $color-text;
+      color: $color-grey-dark;
+      // Changes for <button> element
+      border: none;
+      cursor: pointer;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 1rem rgba($color-black, 0.2);
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 0.5rem rgba($color-black, 0.2);
+    }
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &--anim {
+      animation: moveInBtn 0.5s ease-in 0.75s;
+      animation-fill-mode: backwards;
+    }
+  }
+
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    background-color: $color-text;
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0);
+        -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    //Back side styling
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.about {
+  position: relative;
+  background-color: $color-primary-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14.5rem;
+  margin-top: 12rem;
+  padding-top: 15rem;
+  padding-bottom: 10rem;
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+    max-width: 77rem;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+
+  &__pulse {
+    position: absolute;
+    top: 15rem;
+    right: 7.95rem;
+    height: 36.6rem;
+    width: 36.6rem;
+    border-radius: 50%;
+    z-index: 200;
+    background-color: $color-secondary;
+  }
+
+  &__img-box {
+    position: relative;
+    height: 36.6rem;
+    width: 36.6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 500;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.pulse1 {
+  animation: pulse1 2s infinite;
+}
+
+.pulse2 {
+  animation: pulse2 5s infinite;
+}

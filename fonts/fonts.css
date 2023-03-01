@@ -37,3 +37,11 @@
   font-display: swap;
   src: url('./Quicksand-Bold.ttf');
 }
+
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./PoiretOne-Regular.ttf');
+}
