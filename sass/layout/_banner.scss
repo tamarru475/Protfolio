@@ -1,14 +1,13 @@
 .banner {
   margin-top: 8.6rem;
   position: relative;
-
-  &__container {
-    display: flex;
-    gap: 5rem;
-  }
+  height: 83.9rem;
 
   &__left {
-    padding-left: 7.9rem;
+    position: relative;
+    padding-left: 5vw;
+    max-width: 40vw;
+    z-index: 3;
   }
 
   &__heading {
@@ -34,28 +33,32 @@
   }
 
   &__sun {
-    position: relative;
+    position: absolute;
+    bottom: 10rem;
+    right: 2vw;
     width: 63.9rem;
     height: 63.9rem;
     background: #f4d875;
     border-radius: 50%;
-    margin-top: 7.2rem;
     animation: moveInSun 5s ease-out;
+    z-index: 1;
   }
 
   &__avatar {
     position: absolute;
-    top: 5.2rem;
-    right: 15.621rem;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     animation: avatarApear 7s ease;
   }
 
   &__waves {
     position: absolute;
-    top: 45rem;
+    bottom: 0;
     left: 0;
     max-width: 100vw;
     animation: moveInWaves 3s ease-in-out;
+    z-index: 2;
   }
 
   &__btn {

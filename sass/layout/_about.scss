@@ -2,18 +2,18 @@
   position: relative;
   background-color: $color-primary-dark;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 14.5rem;
-  margin-top: 12rem;
-  padding-top: 15rem;
-  padding-bottom: 10rem;
+  padding: 15rem 5vw 10rem 4vw;
+  z-index: 100;
+  overflow: hidden;
 
   &__text-box {
     display: flex;
     flex-direction: column;
     gap: 2.3rem;
-    max-width: 77rem;
+    max-width: 52vw;
+    overflow: hidden;
   }
 
   &__text {
@@ -22,10 +22,15 @@
     line-height: 4rem;
   }
 
+  &__pulse-box {
+    max-width: 50vw;
+    position: relative;
+  }
+
   &__pulse {
     position: absolute;
-    top: 15rem;
-    right: 7.95rem;
+    top: 0;
+    right: 0;
     height: 36.6rem;
     width: 36.6rem;
     border-radius: 50%;

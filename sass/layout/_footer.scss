@@ -1,0 +1,29 @@
+.footer {
+  background-color: $color-primary-dark;
+  margin: 0 auto;
+  padding: 2rem 15rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 7rem;
+  align-items: center;
+
+  &__span,
+  &__email {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+
+  &__icons {
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+  }
+
+  &__icon {
+    transition: opacity 0.2s;
+  }
+
+  &__icon:hover {
+    opacity: 0.8;
+  }
+}
