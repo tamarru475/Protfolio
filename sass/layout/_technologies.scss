@@ -32,4 +32,10 @@
   &__icon:hover {
     transform: scale(1.2);
   }
+
+  @include respond(phone) {
+    &__icon {
+      max-width: 5rem;
+    }
+  }
 }

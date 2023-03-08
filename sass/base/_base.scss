@@ -10,6 +10,13 @@ html {
   scroll-behavior: smooth;
   // defined one rem
   font-size: 62.5%; // 1rem = 10px; 10px/16.5px = 62.5%;
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
 }
 
 body {

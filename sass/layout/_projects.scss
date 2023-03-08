@@ -26,7 +26,7 @@
   &__card {
     width: 100%;
     box-sizing: border-box;
-    padding: 0 $card-separation / 2;
+    padding: 0 calc($card-separation / 2);
     opacity: 0.95;
 
     &:not(:first-of-type) {
@@ -65,5 +65,9 @@
     &:hover {
       transform: scale(1.3);
     }
+  }
+
+  @include respond(phone) {
+    padding: 10rem 5rem;
   }
 }
